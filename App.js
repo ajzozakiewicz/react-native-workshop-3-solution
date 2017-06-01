@@ -1,4 +1,14 @@
-import ArticlesScreen from './components/Articles'
+import Expo from 'expo'
+import React, { Component } from 'react'
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Image,
+  TouchableOpacity
+} from 'react-native'
+import { StackNavigator } from 'react-navigation'
 import MapScreen from './components/Map'
 
 import * as colors from './styles/colors'
@@ -119,3 +129,5 @@ export default class App extends React.Component {
     );
   }
 }
+
+Expo.registerRootComponent(App);
