@@ -17,9 +17,6 @@ export default class Map extends Component {
 
   constructor (props) {
     super(props)
-
-    this.goHome = this.goHome.bind(this)
-
     this.state = {
       selectedVenue: null,
       markers: []
@@ -27,6 +24,7 @@ export default class Map extends Component {
 
     this.setSelectedVenue = this.setSelectedVenue.bind(this)
     this.closeDetails = this.closeDetails.bind(this)
+    this.goHome = this.goHome.bind(this)
   }
 
   // loads mock data
