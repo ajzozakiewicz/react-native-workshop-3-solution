@@ -1,5 +1,5 @@
 import Expo from 'expo'
-import React, { Component } from 'react'
+import React from 'react'
 import {
   StyleSheet,
   Text,
@@ -10,16 +10,14 @@ import {
 } from 'react-native'
 import { StackNavigator } from 'react-navigation'
 import MapScreen from './components/Map'
-
 import * as colors from './styles/colors'
-import * as fonts from './styles/fonts'
 
 class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Welcome'
-  };
+  static navigationOptions () {
+    return { title: 'Welcome' }
+  }
 
-  constructor(props){
+  constructor (props) {
     super(props)
 
     this.clickHandler = this.clickHandler.bind(this)
@@ -29,45 +27,45 @@ class HomeScreen extends React.Component {
     }
   }
 
-  clickHandler() {
+  clickHandler () {
     const { navigate } = this.props.navigation
     return navigate('Map', { searchString: this.state.searchString })
   }
 
-  render() {
+  render () {
     return (
       <View style={styles.container}>
         <View style={styles.row}>
-          <Image source={require('./assets/images/Beer.png')} style={styles.mainIcon}/>
-          <Image source={require('./assets/images/Wine.png')} style={styles.mainIcon}/>
-          <Image source={require('./assets/images/Martini.png')} style={styles.mainIcon}/>
+          <Image source={require('./assets/images/Beer.png')} style={styles.mainIcon} />
+          <Image source={require('./assets/images/Wine.png')} style={styles.mainIcon} />
+          <Image source={require('./assets/images/Martini.png')} style={styles.mainIcon} />
         </View>
 
         <Text style={styles.welcome}>Begin Your Adventure</Text>
 
-        <View style={{flexDirection: 'row'}}>
+        <View style={{ flexDirection: 'row' }}>
           <View style={styles.searchWrap}>
             <TextInput style={styles.search}
               underlineColorAndroid='transparent'
-              placeholder="Search for beer, wine, or cocktail"
-              placeholderTextColor="#f7f7f7"
-              onChange={(text) => this.setState({ searchString: text})}
+              placeholder='Search for beer, wine, or cocktail'
+              placeholderTextColor='#f7f7f7'
+              onChange={(text) => this.setState({ searchString: text })}
             />
           </View>
 
           <TouchableOpacity
             onPress={this.clickHandler}
-            style={{flex: 1, alignItems: 'center', padding: 5}}
+            style={{ flex: 1, alignItems: 'center', padding: 5 }}
           >
-            <Image source={require('./assets/images/Search.png')} style={{ height: 30, width: 30, marginTop: -5}}/>
+            <Image source={require('./assets/images/Search.png')} style={{ height: 30, width: 30, marginTop: -5 }} />
           </TouchableOpacity>
         </View>
       </View>
-    );
+    )
   }
 }
 
-const STANDARD_VERT_SPACING = 25;
+const STANDARD_VERT_SPACING = 25
 
 const styles = StyleSheet.create({
   container: {
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
     height: 30,
     flex: 5,
     backgroundColor: '#986FBF',
-    borderWidth: .5,
+    borderWidth: 0.5,
     borderColor: colors.WHITE,
     borderRadius: 2,
     marginBottom: STANDARD_VERT_SPACING,
@@ -120,14 +118,14 @@ const Routes = StackNavigator({
   Map: { screen: MapScreen }
 }, {
   headerMode: 'none'
-});
+})
 
 export default class App extends React.Component {
-  render() {
+  render () {
     return (
       <Routes />
-    );
+    )
   }
 }
 
-Expo.registerRootComponent(App);
+Expo.registerRootComponent(App)

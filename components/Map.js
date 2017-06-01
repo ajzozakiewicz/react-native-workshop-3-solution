@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import {NavigationActions} from 'react-navigation'
 import MapView, { Marker } from 'react-native-maps'
 import ResultsList from './ResultsList'
@@ -11,14 +11,14 @@ import mockdata from '../mock/mockdata.json'
 const backAction = NavigationActions.back()
 
 export default class Map extends Component {
-  static navigationOptions = {
-    title: 'Results',
+  static navigationOptions () {
+    return { title: 'Results' }
   }
 
   constructor (props) {
     super(props)
 
-    this.goHome = this.goHome.bind(this);
+    this.goHome = this.goHome.bind(this)
 
     this.state = {
       selectedVenue: null,
@@ -30,25 +30,25 @@ export default class Map extends Component {
   }
 
   // loads mock data
-  componentWillMount() {
+  componentWillMount () {
     this.setState({ markers: mockdata.results })
   }
 
   // function to select a venue, pass to map markers and ResultsList
-  setSelectedVenue(venue) {
+  setSelectedVenue (venue) {
     this.setState({
       selectedVenue: venue
     })
   }
 
   // clear out selected venue, return to results list
-  closeDetails() {
+  closeDetails () {
     this.setState({
       selectedVenue: null
     })
   }
 
-  goHome() {
+  goHome () {
     this.closeDetails()
     this.props.navigation.dispatch(backAction)
   }
@@ -56,7 +56,7 @@ export default class Map extends Component {
   render () {
     return (
       <View style={styles.container}>
-        <BackBar navigate={ this.goHome } />
+        <BackBar navigate={this.goHome} />
 
         <MapView
           style={styles.container}
@@ -119,4 +119,4 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: '#fff'
   }
-});
+})
