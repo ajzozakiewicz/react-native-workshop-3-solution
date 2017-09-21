@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  AppRegistry,
   StyleSheet,
   Text,
   TextInput,
@@ -127,4 +128,4 @@ export default class App extends React.Component {
   }
 }
 
-Expo.registerRootComponent(App)
+AppRegistry.registerComponent('barfinder', () => App);
