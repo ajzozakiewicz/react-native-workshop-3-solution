@@ -1,6 +1,7 @@
 # React Native Workshop 4 Starter App
 
-## to run
+## Getting Started
+1.) To run the project. Install the packages and run the project by executing the following in the project folder.
 
 ```
 yarn 
@@ -9,6 +10,6 @@ yarn start
 
 ```
 
-## open xcode project
+2.) open xcode project
 
-## run emulator
+3.) run emulator (play button)
