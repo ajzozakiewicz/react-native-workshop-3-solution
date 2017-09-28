@@ -128,4 +128,4 @@ export default class App extends React.Component {
   }
 }
 
-AppRegistry.registerComponent('barfinder', () => App);
+AppRegistry.registerComponent('barfinder', () => App)

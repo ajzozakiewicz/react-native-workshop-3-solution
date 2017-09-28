@@ -4,7 +4,8 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
+		"test": "jest",
+		"lint": "standard --fix"
 	},
 	"dependencies": {
 		"react": "16.0.0-alpha.12",
@@ -17,7 +18,6 @@
 		"babel-preset-react-native": "4.0.0",
 		"jest": "21.1.0",
 		"react-test-renderer": "16.0.0-alpha.12",
-
 		"standard-react-native": "^1.0.1"
 	},
 	"jest": {
